@@ -1,0 +1,10 @@
+data_scraper:
+  root_url: https://www.cleanaway.com.au/contact-us/our-locations/
+  timeout: 100
+  clear_contents: True
+  links_data_path: data/external/service_links.csv
+  scraped_data_path: data/external/scraped_services.csv
+
+data_preprocessing:
+  scraped_data_path: data/external/scraped_products.csv
+  processed_data_path: data/processed/products.csv

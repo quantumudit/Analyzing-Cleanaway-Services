@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "analyzing-cleanway-services"
+version = "0.1.0"
+description = "The project is about scraping the locations of cleanway services and analyzing their presence locations"
+authors = ["Udit Kumar Chatterjee <quantumudit@gmail.com>"]
+license = "NC-SA"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^1.26.4"
+pandas = "^2.2.1"
+matplotlib = "^3.8.3"
+seaborn = "^0.13.2"
+pyarrow = "^15.0.0"
+pyyaml = "^6.0.1"
+python-box = "^7.1.1"
+httpx = "^0.27.0"
+selectolax = "^0.3.20"
+plotly = "^5.19.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.0"
+pre-commit = "^3.6.0"
+rich = "^13.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
