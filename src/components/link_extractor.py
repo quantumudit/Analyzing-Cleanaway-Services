@@ -83,15 +83,24 @@ class LinkExtractor:
             parsed_html = HTMLParser(response.text)
 
             # Get the service URLs in the page
-            services = parsed_html.css("div.white-box > a")
+            services = parsed_html.css("div.white-box")  # > a
             logger.info("Total services listed in the page: %s", len(services))
 
             for service in services:
-                service_url = service.attrs["href"]
+                service_url = service.css_first("a").attrs["href"]
+                service_name = service.css_first("h2").text(strip=True)
+                service_address = (
+                    service.css_first("div.location-info__text")
+                    .text(strip=True)
+                    .replace("Address:", "")
+                )
+
                 data = {
                     "page_number": pg_no,
                     "page_url": pg_url,
-                    "product_url": service_url,
+                    "service_url": service_url,
+                    "service_name": service_name,
+                    "service_address": service_address,
                 }
 
                 write_to_csv(self.links_data_path, data)
@@ -142,4 +151,4 @@ class LinkExtractor:
         time_diff = round(end_time - start_time, 2)
 
         logger.info("Time taken for scraping: %s seconds", f"{time_diff:.2f}")
-        logger.info("All product url scraped")
+        logger.info("All services url scraped")

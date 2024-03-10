@@ -3,9 +3,8 @@ This module is responsible for the data extraction pipeline,
 which includes product link extraction and product info scraping.
 """
 
+from src.components.data_scraper import DataScraper
 from src.components.link_extractor import LinkExtractor
-
-# from src.components.service_scraper import ServicesInfoScraper
 from src.exception import CustomException
 from src.logger import logger
 
@@ -34,10 +33,10 @@ class DataExtractionPipeline:
             link_extractor = LinkExtractor()
             link_extractor.scrape_service_links()
             logger.info("Services link extraction completed successfully")
-            # logger.info("Services info extraction started")
-            # product_scraper = ServicesInfoScraper()
-            # product_scraper.scrape_servicess()
-            # logger.info("Services info extraction completed successfully")
+            logger.info("Services info extraction started")
+            data_scraper = DataScraper()
+            data_scraper.scrape_services()
+            logger.info("Services info extraction completed successfully")
         except Exception as excp:
             logger.error(CustomException(excp))
             raise CustomException(excp) from excp
