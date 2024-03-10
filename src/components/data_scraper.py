@@ -109,7 +109,7 @@ class DataScraper:
 
             # RegEx pattern match for latitude and longitudes
             if address_url:
-                lat_long_pattern = re.compile(r".*\?q=(.*)\,(.*)")
+                lat_long_pattern = re.compile(r".*\?q=(.*?)\,+(.*)")
                 matches = lat_long_pattern.match(address_url)
                 lat, long = matches.group(1), matches.group(2)
             else:
