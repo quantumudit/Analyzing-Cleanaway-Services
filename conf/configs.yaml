@@ -6,6 +6,6 @@ data_scraper:
   links_data_path: data/external/service_links.csv
   scraped_data_path: data/external/scraped_services.csv
 
-data_preprocessing:
-  scraped_data_path: data/external/scraped_products.csv
+data_preprocessor:
+  scraped_data_path: data/external/scraped_services.csv
   processed_data_path: data/processed/products.csv

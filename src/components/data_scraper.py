@@ -123,7 +123,7 @@ class DataScraper:
                     else "Miscellaneous"
                 )
             else:
-                services_offered = None
+                services_offered = "Miscellaneous"
 
             # Get the product details in data class
             service_details = ServiceInfo(
