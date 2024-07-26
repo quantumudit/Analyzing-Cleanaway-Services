@@ -95,7 +95,7 @@ class DataProcessor:
             df_exploded["latitude"], errors="coerce"
         )
         df_exploded["longitude"] = pd.to_numeric(
-            df_exploded["latitude"], errors="coerce"
+            df_exploded["longitude"], errors="coerce"
         )
         df_exploded["scrape_ts"] = pd.to_datetime(df_exploded["scrape_ts"])
 
