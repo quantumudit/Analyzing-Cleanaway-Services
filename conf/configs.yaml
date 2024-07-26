@@ -2,10 +2,10 @@ data_scraper:
   root_url: https://www.cleanaway.com.au/contact-us/our-locations/
   user_agent: Mozilla/5.0 (X11; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0
   timeout: 100
-  clear_contents: True
+  clear_contents: False
   links_data_path: data/external/service_links.csv
   scraped_data_path: data/external/scraped_services.csv
 
-data_preprocessor:
+data_processor:
   scraped_data_path: data/external/scraped_services.csv
   processed_data_path: data/processed/products.csv

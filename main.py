@@ -15,28 +15,27 @@ completion of each stage, as well as any exceptions that may occur.
 from src.exception import CustomException
 from src.logger import logger
 from src.pipelines.stage_01_data_extraction import DataExtractionPipeline
+from src.pipelines.stage_02_data_transformation import DataTransformationPipeline
 
-# from src.pipelines.stage_02_data_preprocessor import DataPreprocessingPipeline
-
-STAGE_NAME = "Data Extraction Stage"
-
-try:
-    logger.info(">>>>>> %s started <<<<<<", STAGE_NAME)
-    obj = DataExtractionPipeline()
-    obj.main()
-    logger.info(">>>>>> %s completed <<<<<<\n\nx==========x", STAGE_NAME)
-except Exception as e:
-    logger.error(CustomException(e))
-    raise CustomException(e) from e
-
-
-# STAGE_NAME = "Data Preprocessing Stage"
+# STAGE_NAME = "Data Extraction Stage"
 
 # try:
 #     logger.info(">>>>>> %s started <<<<<<", STAGE_NAME)
-#     obj = DataPreprocessingPipeline()
+#     obj = DataExtractionPipeline()
 #     obj.main()
 #     logger.info(">>>>>> %s completed <<<<<<\n\nx==========x", STAGE_NAME)
 # except Exception as e:
 #     logger.error(CustomException(e))
 #     raise CustomException(e) from e
+
+
+STAGE_NAME = "Data Transformation Stage"
+
+try:
+    logger.info(">>>>>> %s started <<<<<<", STAGE_NAME)
+    obj = DataTransformationPipeline()
+    obj.main()
+    logger.info(">>>>>> %s completed <<<<<<\n\nx==========x", STAGE_NAME)
+except Exception as e:
+    logger.error(CustomException(e))
+    raise CustomException(e) from e
