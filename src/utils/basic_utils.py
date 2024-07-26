@@ -5,12 +5,15 @@ and writing to CSV files. The functions are designed to handle exceptions and
 log relevant information for debugging purposes.
 """
 
+import re
 from csv import DictReader, DictWriter
 from os import makedirs
 from os.path import normpath
 
+import httpx
 import yaml
 from box import Box
+from rich.table import Table
 
 from src.exception import CustomException
 from src.logger import logger
@@ -128,3 +131,43 @@ def read_csv(csv_filepath: str, delimiter: str = ",") -> list:
     except Exception as e:
         logger.error(CustomException(e))
         raise CustomException(e) from e
+
+
+def dict_to_table(data: dict, title: str):
+    # Create a table
+    table = Table(title=title)
+
+    # Add columns
+    table.add_column(
+        "Dataframe Attributes", justify="left", style="bright_cyan", no_wrap=True
+    )
+    table.add_column("Value", justify="right", style="bright_magenta")
+
+    # Add rows
+    for key, value in data.items():
+        table.add_row(key, str(value))
+    return table
+
+
+def get_lat_long(address):
+    url = f"https://nominatim.openstreetmap.org/?q={address}&format=json"
+    response = httpx.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return {"lat": float(data[0]["lat"]), "long": float(data[0]["lon"])}
+    else:
+        return "Error: Unable to retrieve location information"
+
+
+def get_postcode(address):
+    postcode_pattern = r".* (\d{4})"
+    url = f"https://nominatim.openstreetmap.org/?q={address}&format=json"
+    response = httpx.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        for loc in data:
+            loc_name = loc["display_name"]
+            if re.findall(postcode_pattern, loc_name):
+                return re.findall(postcode_pattern, loc_name)
+    else:
+        return "Error: Unable to retrieve location information"
