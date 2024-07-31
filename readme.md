@@ -181,11 +181,11 @@ The following illustration demonstrates the interactive Power BI report to explo
 
 <p align='center'>
   <a href="https://">
-    <img src="./resources/readme_images/app_demo.gif" alt="powerbi-report" style="0">
+    <img src="./resources/readme_images/powerbi_report.gif" alt="powerbi-report" style="0">
   </a>
 </p>
 
-> Access the Power BI report by clicking here: **[Web App Name][powerbi_link]**
+> Access the Power BI report by clicking here: **[Power BI Report][powerbi_link]**
 
 
 ## Support
