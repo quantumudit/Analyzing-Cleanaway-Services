@@ -100,7 +100,9 @@ class DataProcessor:
         df_exploded["scrape_ts"] = pd.to_datetime(df_exploded["scrape_ts"])
 
         # Fixing issue in Longitude
-        df["longitude"] = df["longitude"].apply(lambda x: x + 100 if x < 100 else x)
+        df_exploded["longitude"] = df_exploded["longitude"].apply(
+            lambda x: x + 100 if x < 100 else x
+        )
 
         # Rearrange columns
 
