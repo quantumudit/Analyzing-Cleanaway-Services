@@ -119,12 +119,42 @@ class DataProcessor:
             logger.info("Fixing any source issues in the longitude column")
 
             # Rearrange columns
+            new_col_order = [
+                "id",
+                "services_offered",
+                "service_name",
+                "state",
+                "postcode",
+                "address",
+                "latitude",
+                "longitude",
+                "details_url",
+                "scrape_ts"
+            ]
+            df_rearranged = df_exploded.reindex(columns=new_col_order)
+            logger.info("Reordered columns")
+
+            # Rename columns
+            new_col_names = {
+                "id": "RowID",
+                "service_name": "Service Center",
+                "address": "Address",
+                "latitude": "Latitude",
+                "longitude": "Longitude",
+                "details_url": "Service Details URL",
+                "state": "State",
+                "postcode": "Postal Code",
+                "services_offered": "Service",
+                "scrape_ts": "Data As On",
+            }
+            df_renamed = df_rearranged.rename(columns=new_col_names)
+            logger.info("Renamed columns with user-friendly names")
 
             # create save directory if not exists
             create_directories([dirname(self.processed_data_path)])
 
             # Export transformed data
-            df_exploded.to_csv(self.processed_data_path, index=False)
+            df_renamed.to_csv(self.processed_data_path, index=False)
             logger.info("Transformed data saved at: %s", self.processed_data_path)
             return None
         except Exception as e:
