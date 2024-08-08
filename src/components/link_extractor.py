@@ -120,7 +120,7 @@ class LinkExtractor:
             page_num (int, optional): The page number. Defaults to 1.
         """
         # Generate random sleep time
-        sleep_sec = random.randint(1, 5)
+        sleep_sec = random.randint(1, 3)
 
         # Write the product info and get the page HTML in variable
         content = self.get_urls(page_url, page_num)
