@@ -8,7 +8,7 @@ from src.exception import CustomException
 from src.logger import logger
 
 
-class DataTransformationPipeline:
+class DataProcessingPipeline:
     """
     This class represents the data extraction pipeline.
     It includes methods for product link extraction and product info scraping.
@@ -38,11 +38,11 @@ class DataTransformationPipeline:
 
 
 if __name__ == "__main__":
-    STAGE_NAME = "Data Transformation Stage"
+    STAGE_NAME = "Data Processing Stage"
 
     try:
         logger.info(">>>>>> %s started <<<<<<", STAGE_NAME)
-        obj = DataTransformationPipeline()
+        obj = DataProcessingPipeline()
         obj.main()
         logger.info(">>>>>> %s completed <<<<<<\n\nx==========x", STAGE_NAME)
     except Exception as e:

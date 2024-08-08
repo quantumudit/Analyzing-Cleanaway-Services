@@ -14,8 +14,9 @@ completion of each stage, as well as any exceptions that may occur.
 
 from src.exception import CustomException
 from src.logger import logger
+
 # from src.pipelines.stage_01_data_extraction import DataExtractionPipeline
-from src.pipelines.stage_02_data_transformation import DataTransformationPipeline
+from src.pipelines.stage_02_data_processing import DataProcessingPipeline
 
 # STAGE_NAME = "Data Extraction Stage"
 
@@ -29,11 +30,11 @@ from src.pipelines.stage_02_data_transformation import DataTransformationPipelin
 #     raise CustomException(e) from e
 
 
-STAGE_NAME = "Data Transformation Stage"
+STAGE_NAME = "Data Processing Stage"
 
 try:
     logger.info(">>>>>> %s started <<<<<<", STAGE_NAME)
-    obj = DataTransformationPipeline()
+    obj = DataProcessingPipeline()
     obj.main()
     logger.info(">>>>>> %s completed <<<<<<\n\nx==========x", STAGE_NAME)
 except Exception as e:
