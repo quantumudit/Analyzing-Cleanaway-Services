@@ -14,7 +14,7 @@ completion of each stage, as well as any exceptions that may occur.
 
 from src.exception import CustomException
 from src.logger import logger
-from src.pipelines.stage_01_data_extraction import DataExtractionPipeline
+# from src.pipelines.stage_01_data_extraction import DataExtractionPipeline
 from src.pipelines.stage_02_data_transformation import DataTransformationPipeline
 
 # STAGE_NAME = "Data Extraction Stage"
