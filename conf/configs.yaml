@@ -8,4 +8,4 @@ data_scraper:
 
 data_processor:
   scraped_data_path: data/external/scraped_services.csv
-  processed_data_path: data/processed/products.csv
+  processed_data_path: data/processed/cleanaway_services.csv
