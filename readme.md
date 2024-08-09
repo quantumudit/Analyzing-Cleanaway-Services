@@ -24,7 +24,7 @@
 
 ## Overview
 
-The project aims to create a Power BI report that enables end users to analyze and visualize various waste management services provided by [Cleanaway][website_link] across Australia in a much convenient way.
+The project aims to create a Power BI report that enables end users to analyze and visualize various waste management services provided by [Cleanaway][website_link] across Australia in a much more convenient way.
 
 Here is the snippet of the target website:
 
