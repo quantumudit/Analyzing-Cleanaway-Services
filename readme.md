@@ -41,8 +41,8 @@ The Power BI report serves as a valuable tool for customers to locate the neares
 Here is the snapshot of the Power BI report:
 
 <p align='center'>
-  <a href="">
-    <img src="./resources/readme_images/powerbi_report.png" alt="app-snippet" style="0">
+  <a href="https://app.powerbi.com/view?r=eyJrIjoiNTFjNGNkZDktMDUyMC00ZDVjLWI5M2ItZTQyNzBmYjc5ZjI5IiwidCI6IjI5MmY4YmYxLTg2NzQtNGM0Ny05Yzk1LWMwNDYzZGQxMGRlNCJ9&embedImagePlaceholder=true&pageName=f9f8199023dbd13e50ea">
+    <img src="./resources/readme_images/powerbi_report.png" alt="report-snippet" style="0">
   </a>
 </p>
 
@@ -180,8 +180,8 @@ The dashboard provides users with a clear and engaging way to explore data insig
 The following illustration demonstrates the interactive Power BI report to explore insights from the data:
 
 <p align='center'>
-  <a href="https://">
-    <img src="./resources/readme_images/powerbi_report.gif" alt="powerbi-report" style="0">
+  <a href="https://app.powerbi.com/view?r=eyJrIjoiNTFjNGNkZDktMDUyMC00ZDVjLWI5M2ItZTQyNzBmYjc5ZjI5IiwidCI6IjI5MmY4YmYxLTg2NzQtNGM0Ny05Yzk1LWMwNDYzZGQxMGRlNCJ9&embedImagePlaceholder=true&pageName=f9f8199023dbd13e50ea">
+    <img src="./resources/readme_images/powerbi_report.png" alt="powerbi-report" style="0">
   </a>
 </p>
 
@@ -227,7 +227,7 @@ This license allows reusers to distribute, remix, adapt, and build upon the mate
 <!-- External Links -->
 
 [website_link]: https://www.cleanaway.com.au/contact-us/our-locations/
-[powerbi_link]: https://link_to_webapp.streamlit.app/
+[powerbi_link]: https://app.powerbi.com/view?r=eyJrIjoiNTFjNGNkZDktMDUyMC00ZDVjLWI5M2ItZTQyNzBmYjc5ZjI5IiwidCI6IjI5MmY4YmYxLTg2NzQtNGM0Ny05Yzk1LWMwNDYzZGQxMGRlNCJ9&embedImagePlaceholder=true&pageName=f9f8199023dbd13e50ea
 [requirements]: ./requirements.txt
 
 <!-- Project Specific Links -->

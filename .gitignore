@@ -18,6 +18,7 @@ archive/
 # Power BI extensions
 *.pbix
 *.pbit
+*.fig
 
 # Ignore code spell extension JSON
 cspell.json
